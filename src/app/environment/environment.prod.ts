@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  baseurl: 'https://portfolio-backend-7czu.onrender.com/api/v1',
+  baseurl: 'https://mini-ecommerce-64q5.onrender.com//api/v1',
 };
