@@ -1,0 +1,20 @@
+.dropdown_wrapper{
+    position: absolute;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: black;
+    width: 200px;
+    top: 60px;
+    z-index: 9999 !important;
+}
+
+.logOutHolder{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    width: 40px;
+    background-color: black;
+    border-radius: 50%;
+    cursor: pointer;
+}

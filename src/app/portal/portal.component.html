@@ -1,0 +1,30 @@
+<nb-layout>
+    <nb-layout-header>
+      <div class="d-flex space_between align_center  width-full">
+        <div class="d-flex gap-4 align_center">
+          <i
+            class="fa-solid fa-bars fa-xl cursor_pointer"
+            (click)="toggle_side_menu()"
+          ></i>
+          
+          
+        </div>
+        <div class="d-flex gap-3 align_center row_reverse  position_relative">
+          <div (click)="logout()"  class="logOutHolder">
+            <i class="fa-solid fa-power-off"></i>
+          </div>
+          <div class="d-flex gap-2">
+            <p-tag severity="warn" value="{{ user_data?.fullname }}" />
+            <p-tag severity="warn" value="{{ user_data?.role }}" />
+          </div>
+      
+        </div>
+      </div>
+    </nb-layout-header>
+    <nb-sidebar>
+      <nb-menu [items]="adminMenu"></nb-menu>
+    </nb-sidebar>
+    <nb-layout-column>
+      <router-outlet></router-outlet>
+    </nb-layout-column>
+  </nb-layout>

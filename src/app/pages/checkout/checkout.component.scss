@@ -1,0 +1,59 @@
+.formContainer {
+    display: flex;
+    justify-content: center;
+  }
+  .formBody {
+    border: 2px solid #ffffff;
+    width: 100%;
+    border-radius: 12px;
+
+  }
+  
+  @media (max-width:600px){
+    .formBody{
+      width: 100%;
+    }
+  }
+  
+  .minHeightScreen{
+    min-height: 70vh;
+  }
+  
+  
+  label{
+    color: #ffffff;
+    display: block;
+    cursor: pointer;
+    font-weight: 600;
+    font-family: "DM Sans", sans-serif !important;
+  }
+  input , textarea{
+    width: 100%;
+    margin: 8px 0;
+    border-radius: 6px;
+    padding: 10px;
+  
+  }
+  .submitBtn{
+    width: 180px;
+  }
+  .centerAll{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .password-input{
+    position: relative;
+
+  }
+
+  .positionEye{
+    position: absolute;
+    top:50%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+  }
+  

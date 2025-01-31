@@ -1,0 +1,109 @@
+<section class="default-section-padding">
+    <div class="container-xl py-2">
+      <nav>
+        <div class="headerHolder">
+          <ul class="headerFlex">
+            <li *ngIf="logged_in"
+            (click)="logout()"
+            routerLinkActive="text-rose"
+            class="font-16 font-weight-700 line-height-16 zeroPaddingBottom zeroMarginBottom mx-3 cursor-pointer"
+          >
+            Logout
+          </li>
+            <li *ngIf="logged_in"
+            routerLink="/orders"
+            routerLinkActive="text-rose"
+            class="font-16 font-weight-700 line-height-16 zeroPaddingBottom zeroMarginBottom mx-3 cursor-pointer"
+          >
+            Orders
+          </li>
+            <li
+            *ngIf="!logged_in"
+              routerLink="/auth/login"
+              routerLinkActive="text-rose"
+              class="font-16 font-weight-700 line-height-16 zeroPaddingBottom zeroMarginBottom mx-3 cursor-pointer"
+            >
+              Login
+            </li>
+            <li
+             (click)="route_to_cart()"
+              routerLinkActive="text-rose"
+              class="font-16 font-weight-700 line-height-16 zeroPaddingBottom zeroMarginBottom mx-3 cursor-pointer"
+            >
+              Cart
+            </li>
+            <li
+              routerLink="/"
+              [routerLinkActiveOptions]="{exact:true}"
+              routerLinkActive="text-rose"
+              class="font-16 font-weight-700 line-height-16 zeroPaddingBottom zeroMarginBottom mx-3 cursor-pointer"
+            >
+              Home
+            </li>
+          </ul>
+        </div>
+        <div class="headerHolderPhone">
+          <ul class="phoneHeaderFlex zeroMarginBottom zeroPaddingBottom">
+            <li>
+              <i
+                (click)="open(content)"
+                class="fa-solid fa-bars text-white fa-2x"
+              ></i>
+            </li>
+         
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </section>
+  
+  <ng-template #content let-offcanvas>
+    <div class="offcanvas-body position-relative">
+      <ul class="phoneUl">
+        <li
+          routerLink="/"
+          [routerLinkActiveOptions]="{exact:true}"
+          routerLinkActive="text-rose"
+          class="font-16 font-weight-700 line-height-16 zeroPaddingBottom zeroMarginBottom mx-3 cursor-pointer"
+          (click)="offcanvas.dismiss('Cross click')"
+        >
+          Home
+        </li>
+        <li
+        (click)="route_to_cart()"
+          routerLinkActive="text-rose"
+          class="font-16 font-weight-700 line-height-16 zeroPaddingBottom zeroMarginBottom mx-3 cursor-pointer"
+          (click)="offcanvas.dismiss('Cross click')"
+        >
+          Cart
+        </li>
+        <li
+        *ngIf="!logged_in"
+          routerLink="/auth/login"
+          routerLinkActive="text-rose"
+          class="font-16 font-weight-700 line-height-16 zeroPaddingBottom zeroMarginBottom mx-3 cursor-pointer"
+          (click)="offcanvas.dismiss('Cross click')"
+        >
+          Login
+        </li>
+        <li
+        *ngIf="logged_in"
+          routerLink="/auth/login"
+          routerLinkActive="text-rose"
+          class="font-16 font-weight-700 line-height-16 zeroPaddingBottom zeroMarginBottom mx-3 cursor-pointer"
+          (click)="offcanvas.dismiss('Cross click')"
+        >
+          Orders
+        </li>
+        <li
+        *ngIf="logged_in"
+        (click)="logout()"
+          routerLinkActive="text-rose"
+          class="font-16 font-weight-700 line-height-16 zeroPaddingBottom zeroMarginBottom mx-3 cursor-pointer"
+          (click)="offcanvas.dismiss('Cross click')"
+        >
+          Logout
+        </li>
+      </ul>
+    </div>
+  </ng-template>

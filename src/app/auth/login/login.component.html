@@ -1,0 +1,87 @@
+<div class="centerAll">
+    <div>
+<section class="default-section-padding">
+    <div class="container-xl position-relative">
+      <p
+        class="font-40 line-height-48 text-white font-weight-800 text-align-left zeroPaddingBottom zeroMarginBottom text-align-center"
+      >
+        Login
+      </p>
+    </div>
+  </section>
+<section class="minHeightScreen">
+    <div class="container pt-2">
+      <div class="formContainer">
+        <div class="formBody p-4 m-3">
+          <form [formGroup]="form">
+            <div class="row">
+             
+              <div class="col-12 col-lg-12 col-md-12 col-sm-12 mt-2">
+                <label > *Email </label>
+                <input
+                  formControlName="email"
+                  placeholder="Enter your email"
+          
+                  type="text"
+                />
+                <small
+                  *ngIf="
+                    f['email']?.touched &&
+                    f['email'].invalid &&
+                    f['email'].errors['required']
+                  "
+                  >e-mail is required</small
+                >
+                <small
+                  *ngIf="
+                    f['email']?.touched &&
+                    f['email'].invalid &&
+                    f['email'].errors['email']
+                  "
+                  >e-mail should be of type e-mail</small
+                >
+              </div>
+              <div class="col-12 col-lg-12 col-md-12 col-sm-12 mt-2">
+                <label > *Password </label>
+                <div class="password-input">
+                <input
+                  formControlName="password"
+                  placeholder="Enter your password"
+         
+                  type="{{type}}"
+                />
+                <i (click)="toggleTypeBack()" *ngIf="type=='password'" class="fa-solid fa-eye positionEye"></i>
+                <i (click)="toggleType()" *ngIf="type!='password'" class="fa-solid fa-eye-slash positionEye"></i>
+              </div>
+                <small
+                  *ngIf="
+                    f['password']?.touched &&
+                    f['password'].invalid &&
+                    f['password'].errors['required']
+                  "
+                  >password is required</small
+                >
+                
+              </div>
+              
+              <div class="btn-bottom-flex">
+                
+       
+              <div class="submitBtn mt-3">
+                <button [disabled]="!form.valid" (click)="submit()" class="default-btn">
+                  Submit
+                </button>
+              
+              </div>
+              <p routerLink="/auth/sign-up" class="text-white zeroMarginBottom zeroPaddingBottom mt-4 font-weight-700 mx-3"><a><u>Click here </u></a>to sign-up</p>
+            </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+</div>
+
+<p-toast/>

@@ -1,0 +1,75 @@
+<app-header />
+
+<section class="default-section-padding">
+  <div class="container-xl position-relative">
+    <p
+      class="font-40 line-height-48 text-white font-weight-800 text-align-left zeroPaddingBottom zeroMarginBottom text-align-center"
+    >
+      Cart
+    </p>
+  </div>
+</section>
+
+<div>
+  <div class="container-xl">
+    <div class="basicInfo">
+      <p class="text-white font-20 font-weight-800 line-height-20">
+        Net Amount : Rs {{ billAmount }} /-
+      </p>
+      <div class="mt-2">
+        <button (click)="clearCart()" class="default-btn font-weight-800 font-20">CLEAR CART</button>
+        <button [disabled]="billAmount<1" routerLink="/checkout" class="default-btn font-weight-800 font-20 mx-3">CHECKOUT</button>
+      </div>
+     
+    </div>
+  </div>
+</div>
+
+<section class="default-section-padding">
+  <div class="container-xl">
+    <div class="row">
+      <div
+        class="col-12 col-lg-3 col-md-4 col-sm-12"
+        *ngFor="let product of products"
+      >
+        <div class="productContainer p-3">
+          <div class="imageHolderProduct">
+            <img
+              class="responsiveImageCover"
+              [src]="product.product_id.image"
+            />
+          </div>
+          <div class="produtData">
+            <div class="basicInfo pt-4">
+              <p class="text-white font-18 font-weight-800 line-height-20">
+                {{ product.product_id.name }} X {{ product.quantity }}
+              </p>
+              <p class="text-white font-18 font-weight-800 line-height-20">
+                Rs {{ product.product_id.price }}
+              </p>
+            </div>
+            <!-- <div class="">
+              <p>{{product.description}}</p>
+            </div> -->
+            <div class="basicInfo pt-3">
+              <div>
+                <button [disabled]="product.quantity<=1" (click)="updateCart(product._id,'decrement')" class="default-btn">-</button>
+                <button (click)="updateCart(product._id,'increment')" class="default-btn mx-2">+</button>
+              </div>
+              <p class="text-white font-18 font-weight-800 line-height-20">
+                Total : {{ product.quantity * product.product_id.price }} /-
+              </p>
+              
+            </div>
+            <div class="pt-3">
+                <button style="margin: 0 !important;" (click)="removeFromCart(product._id)" class="default-btn mx-2 width-full">remove from cart</button>
+            </div>
+           
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<p-toast />

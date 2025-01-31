@@ -1,0 +1,107 @@
+<section class="mt-4">
+    <div class="container-fluid">
+      <nb-card>
+        <nb-card-header class="card_header">
+          <div class="d-flex space_between align_center">
+            <div>Add Roles</div>
+            <div>
+              <p-button
+                label="Back"
+                [raised]="true"
+                severity="contrast"
+                routerLink="/portal/products"
+              />
+            </div>
+          </div>
+        </nb-card-header>
+        <nb-card-body>
+          <form [formGroup]="form">
+            <div class="row">
+              <div class="col-lg-4">
+                <label>Name</label>
+                <input type="text" formControlName="name" class="form-control" />
+                <small
+                  *ngIf="
+                    form_controls['name']?.touched &&
+                    form_controls['name'].invalid &&
+                    form_controls['name'].errors['required']
+                  "
+                  >name is required</small
+                >
+              </div>
+  
+              <div class="col-lg-4">
+                  <label>Product code(auto generated)</label>
+                  <input readonly type="text" formControlName="product_code" class="form-control" />
+                  
+                </div>
+  
+                <div class="col-lg-4">
+                  <label>Description</label>
+                  <input type="text" formControlName="description" class="form-control" />
+                  <small
+                    *ngIf="
+                      form_controls['description']?.touched &&
+                      form_controls['description'].invalid &&
+                      form_controls['description'].errors['required']
+                    "
+                    >description is required</small
+                  >
+                </div>
+  
+                <div class="col-lg-4">
+                  <label>Price</label>
+                  <input type="number" formControlName="price" class="form-control" />
+                  <small
+                    *ngIf="
+                      form_controls['price']?.touched &&
+                      form_controls['price'].invalid &&
+                      form_controls['price'].errors['required']
+                    "
+                    >price is required</small
+                  >
+                </div>
+  
+                <div class="col-lg-4">
+                  <label>Stock</label>
+                  <input type="number" formControlName="stock" class="form-control" />
+                  <small
+                    *ngIf="
+                      form_controls['stock']?.touched &&
+                      form_controls['stock'].invalid &&
+                      form_controls['stock'].errors['required']
+                    "
+                    >stock is required</small
+                  >
+                </div>
+  
+                <div class="col-lg-4">
+                  <label>Image</label>
+                  <input (change)="photoUpload($event)" type="file"  class="form-control" />
+                  <small
+                    *ngIf="
+                      form_controls['stock']?.touched &&
+                      form_controls['stock'].invalid &&
+                      form_controls['stock'].errors['required']
+                    "
+                    >image is required</small
+                  >
+                </div>
+  
+            </div>
+          </form>
+        </nb-card-body>
+        <nb-card-footer>
+          <p-button
+            label="Submit"
+            [raised]="true"
+            severity="contrast"
+            [disabled]="!form.valid"
+            (click)="put()"
+          />
+        </nb-card-footer>
+      </nb-card>
+    </div>
+  </section>
+  
+  <p-toast />

@@ -1,0 +1,145 @@
+<app-header />
+
+<section class="default-section-padding">
+  <div class="container-xl position-relative">
+    <p
+      class="font-40 line-height-48 text-white font-weight-800 text-align-left zeroPaddingBottom zeroMarginBottom text-align-center"
+    >
+      Checkput
+    </p>
+  </div>
+</section>
+
+<div>
+  <div class="container-xl">
+    <div class="basicInfo">
+      <p class="text-white font-20 font-weight-800 line-height-20">
+       
+      </p>
+      <div class="mt-2">
+        <button routerLink="/cart" class="default-btn font-weight-800 font-20">
+          BACK
+        </button>
+        <button
+          [disabled]="billAmount < 1"
+          (click)="placeOrder()"
+          class="default-btn font-weight-800 font-20 mx-3"
+        >
+          PLACE ORDER
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section class="default-section-padding">
+  <div class="container-xl">
+    <div class="row">
+        <div class="col-12 col-lg-4 col-md-4 col-sm-12">
+            <p class="text-white font-18 font-weight-600 line-height-20 text-align-center" >Shipping address</p>
+            <div class="formContainer">
+                <div class="formBody p-4 m-3">
+                  <form [formGroup]="form">
+                    <div class="row">
+                      <div class="col-12 col-lg-12 col-md-12 col-sm-12 mt-2">
+                        <label> *Country </label>
+                        <input
+                          formControlName="country"
+                          placeholder="Enter your country"
+                          type="text"
+                        />
+                        <small
+                          *ngIf="
+                            f['country']?.touched &&
+                            f['country'].invalid &&
+                            f['country'].errors['required']
+                          "
+                          >country is required</small
+                        >
+                       
+                      </div>
+          
+                      <div class="col-12 col-lg-12 col-md-12 col-sm-12 mt-2">
+                          <label> *State </label>
+                          <input
+                            formControlName="state"
+                            placeholder="Enter your state"
+                            type="text"
+                          />
+                          <small
+                            *ngIf="
+                              f['state']?.touched &&
+                              f['state'].invalid &&
+                              f['state'].errors['required']
+                            "
+                            >state is required</small
+                          >
+                         
+                        </div>
+          
+                        <div class="col-12 col-lg-12 col-md-12 col-sm-12 mt-2">
+                          <label> *City </label>
+                          <input
+                            formControlName="city"
+                            placeholder="Enter your city"
+                            type="text"
+                          />
+                          <small
+                            *ngIf="
+                              f['city']?.touched &&
+                              f['city'].invalid &&
+                              f['city'].errors['required']
+                            "
+                            >city is required</small
+                          >
+                       
+                        </div>
+          
+                        <div class="col-12 col-lg-12 col-md-12 col-sm-12 mt-2">
+                          <label> *Pincode </label>
+                          <input
+                            formControlName="pincode"
+                            placeholder="Enter your pincode"
+                            type="number"
+                          />
+                          <small
+                            *ngIf="
+                              f['pincode']?.touched &&
+                              f['pincode'].invalid &&
+                              f['pincode'].errors['required']
+                            "
+                            >pincode is required</small
+                          >
+                         
+                        </div>
+                      
+          
+                      
+                    </div>
+                  </form>
+                </div>
+              </div>
+        </div>
+        <div class="col-12 col-lg-8 col-md-8 col-sm-12">
+            <p class="text-white font-18 font-weight-600 line-height-20 text-align-center" >Order summary</p>
+            <div class="billBlock">
+                <div class="formBody p-4 m-3">
+                    <div class="priceDetailFlex" *ngFor="let data of products" >
+                        <p  class="text-white font-18 font-weight-600 line-height-20 text-align-center">{{data.product_id.name}} X {{data.quantity}} </p>
+                        <p  class="text-white font-18 font-weight-600 line-height-20 text-align-center">Rs {{data.product_id.price * data.quantity }} /- </p>
+                    </div>
+                </div>
+                <div class="formBody p-4 m-3">
+                    <div class="priceDetailFlex" >
+                        <p  class="text-white font-18 font-weight-600 line-height-20 text-align-center">Total</p>
+                        <p  class="text-white font-18 font-weight-600 line-height-20 text-align-center">Rs {{billAmount}} /- </p>
+                    </div>
+              </div>
+            </div>
+        </div>
+    </div>
+
+  </div>
+</section>
+
+<p-toast />

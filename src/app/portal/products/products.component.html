@@ -1,0 +1,109 @@
+<section class="mt-4">
+    <div class="container-fluid">
+      <nb-card>
+        <nb-card-header>
+          <div class="d-flex space_between align_center">
+            <p class="text_align_center font_34">Product List</p>
+            <button class="btn btn-light" routerLink="/portal/products-add">
+              Add
+            </button>
+          </div>
+        </nb-card-header>
+        <nb-card-body>
+          <div class="d-flex justify_end">
+            <div>
+              <p-iconField iconPosition="left" class="ml-auto">
+                <p-inputIcon>
+                  <i class="pi pi-search"></i>
+                </p-inputIcon>
+                <input
+                  pInputText
+                  type="text"
+                  placeholder="Search By Name"
+                  [(ngModel)]="search_string"
+                  (input)="get(1)"
+                />
+              </p-iconField>
+            </div>
+          </div>
+          <p-table
+            [value]="data"
+            [paginator]="true"
+            [rows]="rows"
+            showGridlines
+            [totalRecords]="totalRecords"
+            [lazy]="true"
+            (onPage)="onPageChange($event)"
+            [showCurrentPageReport]="true"
+            currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+            styleClass="p-datatable-striped"
+            [tableStyle]="{ 'margin-top': '10px' }"
+          >
+            <ng-template pTemplate="header">
+              <tr>
+                <th>Sno</th>
+                <th>Name</th>
+                <th>Image</th>
+                <th>Product Code</th>
+                <th>Actions</th>
+              </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-data let-i="rowIndex">
+              <tr>
+                <td>{{ i + 1 }}</td>
+                <td>{{ data?.name }}</td>
+                <td>
+                  <img src="{{data.image}}" width="100" height="100" />
+                </td>
+                <td>
+                  {{data.product_code}}
+                </td>
+                <td>
+                  <div class="d-flex gap-3 align_center cursor_pointer">
+                
+                    <i
+                      class="fa-solid fa-pencil"
+                      style="color: #74c0fc"
+                      (click)="router_to_edit(data?._id)"
+                    ></i>
+                    <i
+                      class="fa-solid fa-trash-can cursor_pointer"
+                      style="color: #f04b05"
+                      (click)="onDelete(data?._id)"
+                    ></i>
+                  </div>
+                </td>
+              </tr>
+            </ng-template>
+          </p-table>
+        </nb-card-body>
+      </nb-card>
+    </div>
+  </section>
+  
+  <p-toast key="delete_toast" position="top-center" (onClose)="onReject()">
+    <ng-template let-message pTemplate="headless" let-closeFn="closeFn">
+      <div
+        class="flex flex-column align-items-start p-4 bg_delete border_radius_10"
+        style="flex: 1 ; justify-content: center;"
+      >
+        <div class="fw_700 my-3 text-center">
+          This action cannot be reverted. Do you still want to proceed ?
+        </div>
+        <div class="d-flex gap-3 align_center justify_center">
+          <p-button
+            size="small"
+            label="Delete"
+            severity="warn"
+            (click)="delete()"
+          />
+          <p-button
+            size="small"
+            label="Cancel"
+            severity="contrast"
+            (onClick)="closeFn($event)"
+          />
+        </div>
+      </div>
+    </ng-template>
+  </p-toast>

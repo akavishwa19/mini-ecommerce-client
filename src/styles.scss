@@ -1,1 +1,604 @@
 /* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files */
+
+//primeng icons
+@import "primeicons/primeicons.css";
+
+//ng-select
+@import "@ng-select/ng-select/themes/default.theme.css";
+
+//fonts
+@import url("https://fonts.googleapis.com/css2?family=Mona+Sans:ital,wght@0,200..900;1,200..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap");
+
+body,
+p {
+  margin: 0 !important;
+}
+
+div,
+p,
+span,
+label,
+input {
+  font-family: "Mona Sans", serif !important;
+}
+
+//form validations
+input,
+textarea {
+  border: 1px solid #52525b !important;
+  color: black !important;
+  background-color: white !important;
+}
+
+input.ng-touched.ng-invalid,
+textarea.ng-touched.ng-invalid,
+.ng-select.ng-touched.ng-invalid {
+  border: 2px solid red;
+}
+
+input.ng-touched.ng-valid,
+textarea.ng-touched.ng-valid,
+.ng-select.ng-touched.ng-valid {
+  border: 2px solid green;
+}
+
+//
+label {
+  font-weight: 600;
+  margin-bottom: 5px;
+  margin-top: 10px !important;
+}
+
+small {
+  margin-top: 5px;
+  color: rgb(255, 77, 77);
+}
+
+//
+.logo_wrapper {
+  height: 80px;
+}
+
+// delete wrapper
+.bg_delete {
+  background-color: #000000;
+}
+
+// form related / input related
+.p-inputtext {
+  background-color: white !important;
+}
+
+// auth bg image
+.login_bg_img {
+  background-image: url("/images/login_dark.jpeg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+//nebular
+.nb-theme-dark nb-layout-header {
+  background-color: (219 212 212 / 5%) !important;
+  backdrop-filter: blur(10px) !important; /* Apply blur for glassy effect */
+  //box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2) !important; /* Optional: subtle shadow for depth */
+  //border: 1px solid rgba(255, 255, 255, 0.2) !important; /* Optional: light border for elegance */
+}
+
+// .nb-theme-dark nb-sidebar {
+//   background-color: (219 212 212 / 5%) !important;
+//   backdrop-filter: blur(10px) !important; /* Apply blur for glassy effect */
+// }
+
+.nb-theme-dark nb-icon svg {
+  height: 20px !important;
+  width: 25px !important;
+}
+
+.nb-theme-dark nb-menu .menu-item .menu-icon {
+  font-size: 20px !important;
+}
+
+.nb-theme-dark nb-sidebar {
+  background-color: #3b4163db;
+  box-shadow: 0 0.5rem 1rem 0 #1a1f33;
+}
+
+.nb-theme-dark
+  nb-layout
+  .layout
+  .layout-container
+  .content
+  .columns
+  nb-layout-column {
+  padding: 0px !important;
+}
+
+@media (max-width: 767.98px) {
+  .nb-theme-dark
+    nb-layout
+    .layout
+    .layout-container
+    .content
+    .columns
+    nb-layout-column {
+    padding: 0px !important;
+  }
+}
+
+//buttons
+.basic_btn_teal {
+  all: unset;
+  color: white; /* Button text color */
+  background-color: #1abc9c; /* Teal background */
+  padding: 10px 20px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  font-weight: 600;
+  width: 120px;
+}
+
+.basic_btn_teal:hover {
+  background-color: #16a085; /* Darker teal on hover */
+  color: white; /* Button text color on hover */
+}
+
+.basic_btn_red {
+  all: unset;
+  color: white; /* Button text color */
+  background-color: #e74c3c; /* Red background */
+  padding: 10px 20px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  font-weight: 600;
+  width: 120px;
+  cursor: pointer;
+}
+
+.basic_btn_red:hover {
+  background-color: #c0392b; /* Darker red on hover */
+  color: white; /* Button text color on hover */
+}
+
+.basic_btn_green {
+  all: unset;
+  color: white; /* Button text color */
+  background-color: #2ecc71; /* Green background */
+  padding: 10px 20px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  font-weight: 600;
+  width: 120px;
+  cursor: pointer;
+}
+
+.basic_btn_green:hover {
+  background-color: #27ae60; /* Darker green on hover */
+  color: white; /* Button text color on hover */
+}
+
+.basic_btn_green:disabled,
+.basic_btn_red:disabled {
+  background-color: black;
+  color: white;
+  cursor: not-allowed !important;
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+// ngx telephone
+.iti--allow-dropdown input,
+.iti--allow-dropdown input[type="tel"] {
+  width: 100 !important;
+  border: 1px solid #d5d9e2 !important;
+}
+.iti--allow-dropdown input,
+.iti--allow-dropdown input[type="text"],
+.iti--allow-dropdown input[type="tel"],
+.iti--separate-dial-code input,
+.iti--separate-dial-code input[type="text"],
+.iti--separate-dial-code input[type="tel"] {
+  padding-right: 6px;
+  padding-left: 52px;
+  margin-left: 0;
+  width: 100% !important;
+  padding-top: 6px !important;
+  padding-bottom: 6px !important;
+  border-radius: 5px !important;
+}
+
+.iti {
+  width: 100% !important;
+}
+
+//prime ng toast color
+
+// .p-toast-message-error {
+//   background-color: #2e2e2e !important;
+//   color: #fff !important;
+// }
+
+.p-toast-message-error {
+  background-color: #ff07078f !important;
+  color: #fff !important;
+}
+
+.p-toast-message-error .p-toast-message-icon {
+  color: white !important;
+}
+
+.p-toast-message-error .p-toast-message-content {
+  border-left: 4px solid white;
+}
+
+.p-toast-message-error .p-toast-icon-close {
+  color: white !important; /* Change the color of the close (cross) button */
+}
+
+.p-toast-message-success {
+  background-color: green !important;
+  color: #fff !important;
+}
+
+.p-toast-message-success .p-toast-message-icon {
+  color: white !important;
+}
+
+.p-toast-message-success .p-toast-message-content {
+  border-left: 4px solid white;
+}
+
+.p-toast-message-success .p-toast-icon-close {
+  color: white !important; /* Change the color of the close (cross) button */
+}
+
+//
+:root {
+  --swiper-pagination-color: white;
+  --swiper-pagination-bullet-size: 8px;
+  --swiper-pagination-bullet-inactive-color: rgba(255, 255, 255, 0.5);
+  --swiper-pagination-bullet-inactive-opacity: 1;
+  --swiper-pagination-bullet-horizontal-gap: 6px;
+}
+
+.swiper-pagination-bullet {
+  background: white !important;
+}
+
+.swiper-pagination-bullet-active {
+  background: white !important;
+  opacity: 1;
+}
+
+.ant-upload-list-item-card-actions .anticon {
+  color: #ffffff !important;
+}
+.ant-upload-list {
+  color: #ffffff !important;
+}
+
+/* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files */
+//root font
+body {
+  margin: 0;
+  font-family: "DM Sans", sans-serif !important;
+  background-color: black !important;
+}
+
+/* Importing Bootstrap SCSS file. */
+@import "bootstrap/scss/bootstrap";
+
+//ng select styles
+@import "@ng-select/ng-select/themes/default.theme.css";
+
+// dm sans font
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
+
+.container-xl {
+  max-width: 1720px !important;
+}
+
+//utilities
+.default-section-padding {
+  padding: 20px 0;
+}
+.font-dmsans {
+  font-family: "DM Sans", sans-serif;
+}
+.font-120 {
+  font-size: clamp(36px, 8vw, 120px);
+}
+.font-40 {
+  font-size: clamp(24px, 2.5vw, 40px);
+}
+.font-36 {
+  font-size: clamp(22px, 2.2vw, 32px);
+}
+.font-20 {
+  font-size: clamp(16px, 1.2vw, 20px);
+}
+.font-18 {
+  font-size: clamp(13px, 1.1vw, 18px);
+}
+.font-16 {
+  font-size: clamp(14px, 1vw, 16px);
+}
+.font-13 {
+  font-size: clamp(10px, 0.8vw, 13px);
+}
+.font-weight-400 {
+  font-weight: 400;
+}
+.font-weight-500 {
+  font-weight: 500;
+}
+.font-weight-600 {
+  font-weight: 600;
+}
+.font-weight-700 {
+  font-weight: 700;
+}
+.font-weight-800 {
+  font-weight: 800;
+}
+.line-height-100 {
+  line-height: clamp(36px, 8vw, 120px);
+}
+.line-height-40 {
+  line-height: 40px;
+}
+.line-height-36 {
+  line-height: 36px;
+}
+.line-height-28 {
+  line-height: 28px;
+}
+.line-height-20 {
+  line-height: 20px;
+}
+.line-height-16 {
+  line-height: 16px;
+}
+.line-height-13 {
+  line-height: 15px;
+}
+.default-section-padding {
+  padding: 20px 0;
+}
+.bg-rose {
+  background-color: #e11d48;
+}
+.bg-white {
+  background-color: white;
+}
+.bg-blue {
+  background-color: #4f46e5;
+}
+.bg-grey {
+  background-color: #94a3b8;
+}
+.bg-black {
+  background-color: black;
+}
+.text-rose {
+  color: #e11d48 !important;
+}
+.text-white {
+  color: white;
+}
+.text-blue {
+  color: #4f46e5;
+}
+.text-dark-grey {
+  color: #1e293b;
+}
+.text-grey {
+  color: #94a3b8;
+}
+.text-black {
+  color: black;
+}
+.zeroPaddingBottom {
+  padding-bottom: 0 !important;
+}
+.zeroMarginBottom {
+  margin-bottom: 0 !important;
+}
+.text-align-center {
+  text-align: center;
+}
+.text-aign-left {
+  text-align: left;
+}
+.text-aign-right {
+  text-align: right;
+}
+.position-absolute {
+  position: absolute;
+}
+.position-relative {
+  position: relative;
+}
+.cursor-pointer {
+  cursor: pointer;
+}
+.cursor-not-allowed {
+  cursor: not-drop;
+}
+.responiveImage {
+  width: 100%;
+  height: 100%;
+}
+.responsiveImageCover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.responsiveImageContain {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.default-btn {
+  font-weight: 600;
+  font-family: "DM Sans", sans-serif;
+  background-color: #e11d48;
+  color: white;
+  padding: 0.5em 1em;
+  border-radius: 6px;
+  box-shadow: 0 5px 20px #e11d4880, 0 6px 6px #e11d4880, 0 0 100px -10px #e11d48;
+  transition: transform 0.3s, box-shadow 0.3s;
+  border: none;
+  outline: none;
+}
+.default-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 28px #e11d4840, 0 10px 10px #e11d4838,
+    0 0 120px -10px #e11d48;
+}
+ul {
+  padding-left: 0 !important;
+}
+.offcanvas-body {
+  background-color: black;
+}
+.height-100vh {
+  height: 100vh;
+}
+.widthFullPercent {
+  width: 100%;
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000000;
+  cursor: pointer;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #e11d48;
+}
+
+.width-full {
+  width: 100%;
+}
+input,
+textarea:focus-visible {
+  outline: none !important;
+}
+small {
+  color: #e11d48 !important;
+  font-size: 12px !important;
+}
+.featuredProjectImage {
+  width: 100%;
+}
+.headingParaFlex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 5px;
+}
+a:hover {
+  color: #e11d48 !important;
+}
+.headingParaFlex p {
+  padding-bottom: 0 !important;
+  margin-bottom: 0 !important;
+}
+.positionLeftAbsolute {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: no-drop;
+  background-color: grey;
+}
+
+.btn-bottom-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.d-flex {
+  display: flex !important;
+}
+.space_between {
+  justify-content: space-between !important;
+}
+
+.align_center {
+  align-items: center !important;
+}
+
+.justify_end{
+  justify-content: flex-end !important;
+}
+
+.justify_center{
+  justify-content: center;
+}
+
+.row_reverse{
+  flex-direction: row-reverse;
+}
+
+.width-full{
+  width: 100%;
+}
+
+.imageHolderProduct{
+  width: 100%;
+  height: 350px;
+  overflow: hidden;
+}
+.basicInfo{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.productContainer{
+  position: relative;    
+}
+.moreInfo{
+  background-color: #ffffff;
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  // position: absolute;
+  // top: 35px;
+  // right: 35px;
+}
+
+.priceDetailFlex{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
