@@ -1,7 +1,7 @@
 import { Component, ElementRef, QueryList, ViewChildren } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MessageService } from 'primeng/api';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Location } from '@angular/common';
 import { environment } from '../../environment/environment';
 import { Router } from '@angular/router';
@@ -50,8 +50,18 @@ export class LoginComponent {
   }
 
   submit() {
+
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Methods': 'POST',
+      }),
+      withCredentials: true
+    };
+
     this.http
-      .post(this.authUrl + '/login', this.form.value)
+      .post(this.authUrl + '/login', this.form.value,httpOptions)
       .subscribe((res: any) => {
         this.form.reset();
         this.sucess(res.message);
