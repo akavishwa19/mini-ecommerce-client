@@ -18,6 +18,10 @@ import Aura from '@primeng/themes/aura';
 import { NbLayoutModule, NbThemeModule } from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 
+import { LoadingBarHttpClientModule } from '@ngx-loading-bar/http-client';
+import { LoadingBarRouterModule } from '@ngx-loading-bar/router';
+import { LoadingBarModule } from '@ngx-loading-bar/core';
+
 @NgModule({
   declarations: [AppComponent],
   imports: [
@@ -28,6 +32,9 @@ import { NbEvaIconsModule } from '@nebular/eva-icons';
     NbThemeModule.forRoot({ name: 'dark' }),
     NbLayoutModule,
     NbEvaIconsModule,
+    LoadingBarHttpClientModule,
+    LoadingBarRouterModule,
+    LoadingBarModule,
   ],
   providers: [
     MessageService,
